@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="icon" href="./images/calculator-icon.png">
+</head>
+
+<body>
+    <section class="my-calcultor">
+        <div class="monitor"></div>
+        <div class="keyboard">
+            <div class="number">
+                <button class="btn-number" value="7">7</button>
+                <button class="btn-number" value="8">8</button>
+                <button class="btn-number" value="9">9</button>
+                <button class="btn-number" value="4">4</button>
+                <button class="btn-number" value="5">5</button>
+                <button class="btn-number" value="6">6</button>
+                <button class="btn-number" value="1">1</button>
+                <button class="btn-number" value="2">2</button>
+                <button class="btn-number" value="3">3</button>
+                <button class="btn-number" value="0">0</button>
+                <button class="btn-number" value=".">.</button>
+                <button class="btn-number" value="π">π</button>
+            </div>
+
+            <div class="operator">
+                <button class="btn-operator" value="" onclick="clearOneEndChar();">DEL</button>
+                <button class="btn-operator" value="" onclick="clearMonitor();">AC</button>
+                <button class="btn-operator" value="+">+</button>
+                <button class="btn-operator" value="-">-</button>
+                <button class="btn-operator" value="x">x</button>
+                <button class="btn-operator" value="÷">÷</button>
+                <button class="btn-operator" value="ANS">ANS</button>
+                <button id="equal-operator" class="btn-operator" value="" onclick="getResultExpression();">=</button>
+            </div>
+        </div>
+        <label class="footer">
+            <input type="checkbox" name="theme">
+            <span></span>
+            <i class="fas fa-moon"></i>
+        </label>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>

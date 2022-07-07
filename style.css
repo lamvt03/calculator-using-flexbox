@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html{
+    background-image: linear-gradient(to right,#654ea3, #eaafc8);
+}
+html[data-theme = "dark"]{
+    --bg-color: #000000;
+    --text-color: #F3F3F3;
+    --bg-btn-number: #898AA6;
+    --bg-btn-number-hover: #C9BBCF;
+    --bg-btn-operator: #FF9F29;
+    --bg-btn-operator-hover: #FBB454;
+}
+html[data-theme = "light"]{
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --bg-btn-number: #898AA6;
+    --bg-btn-number-hover: #C9BBCF;
+    --bg-btn-operator: #FF9F29;
+    --bg-btn-operator-hover: #FBB454;
+}
+.my-calcultor{
+    width: 530px;
+    height: 460px;
+    background-color: var(--bg-color);
+    padding: 30px;
+    color: var(--text-color);
+    margin: 100px auto;
+    border-radius: 8px;
+    border: solid 3px var(--text-color);
+}
+.my-calcultor .monitor{
+    width: 460px;
+    height: 52px;
+    border: solid 3px var(--text-color);
+    margin: auto;
+    text-align: right;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 52px;
+    border-radius: 5px;
+}
+.my-calcultor .keyboard{
+    margin: 30px auto;
+    display: flex;
+}
+.my-calcultor .keyboard .number, .my-calcultor .keyboard .operator{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    height: 300px;
+}
+.my-calcultor .keyboard .number{
+    width: 60%;
+}
+.my-calcultor .keyboard .operator{
+    width: 40%;
+}
+.my-calcultor .keyboard .btn-number{
+    background-color: var(--bg-btn-number);
+    transition: background-color 0.5s cursor 0.3s;
+}
+.my-calcultor .keyboard .btn-number:hover{
+    background-color: var(--bg-btn-number-hover);
+    cursor: pointer;
+}
+.my-calcultor .keyboard .btn-operator{
+    background-color: var(--bg-btn-operator);
+    transition: background-color 0.5s cursor 0.3s;
+}
+.my-calcultor .keyboard .btn-operator:hover{
+    background-color: var(--bg-btn-operator-hover);
+    cursor: pointer;
+}
+button{
+    height: 55px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-number{
+    width: 30%;
+}
+.btn-operator{
+    width: 45%;
+}
+.footer {
+    display: inline-block;
+    position: relative;
+    bottom: 20px;
+    left: 5px;
+    color: var(--text-color);
+    font-size: 28px;
+    margin-bottom: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none; 
+    user-select: none;
+}
+.footer input[type="checkbox"]{
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+.footer span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+}
+.footer .fas{
+    position: absolute;
+    left: -2px;
+    cursor: pointer;
+}
