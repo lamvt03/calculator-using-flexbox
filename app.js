@@ -6,7 +6,8 @@ var keyboard = document.querySelectorAll('button');
 var reset_by_click = false;  //false: gia tri them vao man hinh - true: reset man hinh bang gia tri
 
 for (let button of keyboard) {
-    if (button == document.querySelector('#equal-operator'))
+    if (button == document.querySelector('#equal-operator')
+      ||button == document.querySelector('#del-operator'))
         continue;
     else {
         button.addEventListener("click", function () {
@@ -46,8 +47,8 @@ function getResultExpression() {
         inp = inp.replace('ANS', record[record.length - 1].toString());
     if (inp.includes('÷'))
         inp = inp.replace('÷', '/');
-    if (inp.includes('x'))
-        inp = inp.replace('x', '*');
+    if (inp.includes('×'))
+        inp = inp.replace('×', '*');
 
     outp = eval(inp);
 
