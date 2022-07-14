@@ -49,7 +49,6 @@ function getResultExpression() {
         inp = inp.replace('÷', '/');
     if (inp.includes('×'))
         inp = inp.replace('×', '*');
-
     outp = eval(inp);
     record.push(outp);
     monitor.innerText = outp;
