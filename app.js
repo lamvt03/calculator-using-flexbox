@@ -51,7 +51,6 @@ function getResultExpression() {
         inp = inp.replace('×', '*');
 
     outp = eval(inp);
-
     record.push(outp);
     monitor.innerText = outp;
 }
