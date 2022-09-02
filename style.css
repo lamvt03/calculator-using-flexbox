@@ -38,7 +38,8 @@ html[data-theme = "light"]{
     border: solid 3px var(--text-color);
 }
 .my-calcultor .monitor{
-    width: 460px;
+    width: 100%;
+    padding-right: 10px;
     height: 52px;
     border: solid 3px var(--text-color);
     margin: auto;
@@ -51,19 +52,20 @@ html[data-theme = "light"]{
 .my-calcultor .keyboard{
     margin: 30px auto;
     display: flex;
+    justify-content: space-between;
 }
 .my-calcultor .keyboard .number, .my-calcultor .keyboard .operator{
     display: flex;
     flex-flow: row wrap;
     align-content: space-evenly;
-    justify-content: space-evenly;
+    justify-content: space-between;
     height: 300px;
 }
 .my-calcultor .keyboard .number{
-    width: 60%;
+    width: 62%;
 }
 .my-calcultor .keyboard .operator{
-    width: 40%;
+    width: 35%;
 }
 .my-calcultor .keyboard .btn-number{
     background-color: var(--bg-btn-number);
@@ -116,13 +118,14 @@ button{
 }
 .footer span{
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 25px;
-    height: 25px;
+    top: -8px;
+    left: -4px;
+    width: 28px;
+    height: 28px;
 }
 .footer .fas{
     position: absolute;
-    left: -2px;
+    left: -4px;
+    bottom: 12px;
     cursor: pointer;
 }

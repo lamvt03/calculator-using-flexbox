@@ -3,7 +3,11 @@ monitor.innerText = '';
 
 var keyboard = document.querySelectorAll('button');
 
-var reset_by_click = false;  //false: gia tri them vao man hinh - true: reset man hinh bang gia tri
+/**
+ * false: append giá trị phím vừa nhấn
+ * true: nhấn key bất kỳ => xoá màn hình và hiển thị giá trị phím vừa nhấn
+ */
+var reset_by_click = false;
 
 for (let button of keyboard) {
     if (button == document.querySelector('#equal-operator')
@@ -32,13 +36,11 @@ function clearOneEndChar() {
     monitor.innerHTML = str;
 }
 
-var record = ['']; //luu ket qua
+var record = ['ERROR']; //luu ket qua
 
 //chuc nang phim =
 function getResultExpression() {
     let inp = '' + monitor.innerText;
-    if (inp != '')
-        reset_by_click = true;
     let outp = null;
 
     if (inp.includes('π'))
@@ -49,9 +51,16 @@ function getResultExpression() {
         inp = inp.replace('÷', '/');
     if (inp.includes('×'))
         inp = inp.replace('×', '*');
+    
     outp = eval(inp);
-    record.push(outp);
-    monitor.innerText = outp;
+    outp = Math.round(outp*100000)/100000;
+
+    if(monitor.innerText = outp){
+        reset_by_click = true;
+        record.pop();
+        record.push(outp);
+    }
+    
 }
 
 //light-dark mode
